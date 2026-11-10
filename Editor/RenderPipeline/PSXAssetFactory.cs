@@ -22,12 +22,12 @@ namespace HauntedPSX.RenderPipelines.PSX.Editor
         static void CreatePSXRenderPipelineAsset()
         {
             var icon = EditorGUIUtility.FindTexture("ScriptableObject Icon");
-            ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<DoCreateNewAssetPSXRenderPipelineAsset>(), "PSXRenderPipelineAsset.asset", icon, null);
+            ProjectWindowUtil.StartNameEditingIfProjectWindowExists(default(EntityId), ScriptableObject.CreateInstance<DoCreateNewAssetPSXRenderPipelineAsset>(), "PSXRenderPipelineAsset.asset", icon, null);
         }
 
-        class DoCreateNewAssetPSXRenderPipelineAsset : UnityEditor.ProjectWindowCallback.EndNameEditAction
+        class DoCreateNewAssetPSXRenderPipelineAsset : UnityEditor.ProjectWindowCallback.AssetCreationEndAction // voxelhell patch: Unity 6.6 EntityId API
         {
-            public override void Action(int instanceId, string pathName, string resourceFile)
+            public override void Action(EntityId entityId, string pathName, string resourceFile)
             {
                 var newAsset = CreateInstance<PSXRenderPipelineAsset>();
                 newAsset.name = Path.GetFileName(pathName);
@@ -47,12 +47,12 @@ namespace HauntedPSX.RenderPipelines.PSX.Editor
         static void CreatePSXRenderPipelineResources()
         {
             var icon = EditorGUIUtility.FindTexture("ScriptableObject Icon");
-            ProjectWindowUtil.StartNameEditingIfProjectWindowExists(0, ScriptableObject.CreateInstance<DoCreateNewAssetPSXRenderPipelineResources>(), "PSXRenderPipelineResources.asset", icon, null);
+            ProjectWindowUtil.StartNameEditingIfProjectWindowExists(default(EntityId), ScriptableObject.CreateInstance<DoCreateNewAssetPSXRenderPipelineResources>(), "PSXRenderPipelineResources.asset", icon, null);
         }
 
-        class DoCreateNewAssetPSXRenderPipelineResources : UnityEditor.ProjectWindowCallback.EndNameEditAction
+        class DoCreateNewAssetPSXRenderPipelineResources : UnityEditor.ProjectWindowCallback.AssetCreationEndAction // voxelhell patch: Unity 6.6 EntityId API
         {
-            public override void Action(int instanceId, string pathName, string resourceFile)
+            public override void Action(EntityId entityId, string pathName, string resourceFile)
             {
                 var newAsset = CreateInstance<PSXRenderPipelineResources>();
                 newAsset.name = Path.GetFileName(pathName);
