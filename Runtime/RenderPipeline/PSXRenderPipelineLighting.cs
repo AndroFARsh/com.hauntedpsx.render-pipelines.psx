@@ -335,7 +335,7 @@ namespace HauntedPSX.RenderPipelines.PSX.Runtime
                         lightData.Init(ref discLight);
                         break;
                     default:
-                        lightData.InitNoBake(light.GetEntityId()); // voxelhell patch: Unity 6.6 removed the int overload
+                        lightData.InitNoBake(light.GetEntityId());
                         break;
                 }
 
@@ -367,7 +367,7 @@ namespace HauntedPSX.RenderPipelines.PSX.Runtime
             for (int i = 0; i < requests.Length; i++)
             {
                 Light light = requests[i];
-                lightData.InitNoBake(light.GetEntityId()); // voxelhell patch: Unity 6.6 removed the int overload
+                lightData.InitNoBake(light.GetEntityId());
                 lightsOutput[i] = lightData;
             }
             Debug.LogWarning("Realtime GI is not supported in HPSXRP.");

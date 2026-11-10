@@ -25,7 +25,7 @@ namespace HauntedPSX.RenderPipelines.PSX.Editor
             ProjectWindowUtil.StartNameEditingIfProjectWindowExists(default(EntityId), ScriptableObject.CreateInstance<DoCreateNewAssetPSXRenderPipelineAsset>(), "PSXRenderPipelineAsset.asset", icon, null);
         }
 
-        class DoCreateNewAssetPSXRenderPipelineAsset : UnityEditor.ProjectWindowCallback.AssetCreationEndAction // voxelhell patch: Unity 6.6 EntityId API
+        class DoCreateNewAssetPSXRenderPipelineAsset : UnityEditor.ProjectWindowCallback.AssetCreationEndAction
         {
             public override void Action(EntityId entityId, string pathName, string resourceFile)
             {
@@ -50,7 +50,7 @@ namespace HauntedPSX.RenderPipelines.PSX.Editor
             ProjectWindowUtil.StartNameEditingIfProjectWindowExists(default(EntityId), ScriptableObject.CreateInstance<DoCreateNewAssetPSXRenderPipelineResources>(), "PSXRenderPipelineResources.asset", icon, null);
         }
 
-        class DoCreateNewAssetPSXRenderPipelineResources : UnityEditor.ProjectWindowCallback.AssetCreationEndAction // voxelhell patch: Unity 6.6 EntityId API
+        class DoCreateNewAssetPSXRenderPipelineResources : UnityEditor.ProjectWindowCallback.AssetCreationEndAction
         {
             public override void Action(EntityId entityId, string pathName, string resourceFile)
             {
