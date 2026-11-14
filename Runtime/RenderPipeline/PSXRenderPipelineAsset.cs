@@ -95,6 +95,9 @@ namespace HauntedPSX.RenderPipelines.PSX.Runtime
 
         [SerializeField]
         public PSXRenderPipelineResources renderPipelineResources;
+
+        [SerializeField]
+        public VolumeProfile defaultVolumeProfile;
         
         // TODO: Currently the SRP Batcher is forced off due to a D3D11 swap chain crash in HPSXRP.
         // Expose this option to users once the SRP Batcher stabilizes / once the engine is fixed.

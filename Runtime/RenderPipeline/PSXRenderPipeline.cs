@@ -39,15 +39,15 @@ namespace HauntedPSX.RenderPipelines.PSX.Runtime
 
         internal protected void Build()
         {
-            InitializeVolumeManager();
+            InitializeVolumeManager(m_Asset.defaultVolumeProfile);
             ConfigureGlobalRenderPipelineTag();
             ConfigureSRPBatcherFromAsset(m_Asset);
         }
 
-        static void InitializeVolumeManager()
+        static void InitializeVolumeManager(VolumeProfile defaultVolumeProfile)
         {
 #if UNITY_2023_2_OR_NEWER
-            if (!VolumeManager.instance.isInitialized) { VolumeManager.instance.Initialize(); }
+            if (!VolumeManager.instance.isInitialized) { VolumeManager.instance.Initialize(defaultVolumeProfile); }
 #endif
         }
 
